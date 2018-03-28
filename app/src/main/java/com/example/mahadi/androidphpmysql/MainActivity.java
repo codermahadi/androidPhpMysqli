@@ -64,21 +64,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         progressDialog.setMessage("Registering User..");
         progressDialog.show();
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.ROOT_REGISTER,
                 new Response.Listener<String>() {
 
                     @Override
                     public void onResponse(String response) {
-
                         progressDialog.dismiss();
 
                         try {
                             JSONObject jsonObject = new JSONObject(response);
-                        Toast.makeText(getApplicationContext(),jsonObject.getString("message"),Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),jsonObject.getString("msg"),Toast.LENGTH_LONG).show();
 
 
                         } catch (JSONException e) {
                             e.printStackTrace();
+                            Toast.makeText(getApplicationContext(),e.toString()+"Error msg",Toast.LENGTH_LONG).show();
+
                         }
 
                     }
@@ -89,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onErrorResponse(VolleyError error) {
 
-                        progressDialog.dismiss();
+                        progressDialog.hide();
                         Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
 
                     }
