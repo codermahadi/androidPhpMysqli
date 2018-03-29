@@ -7,5 +7,6 @@ package com.example.mahadi.androidphpmysql;
 public class Constants {
 
     public static final String ROOT_URL="http://192.168.6.235/androidApi/v1/";
-    public static final String ROOT_REGISTER=ROOT_URL+"registerUser.php";
+    public static final String ROOT_REGISTER = ROOT_URL+"registerUser.php";
+    public static final String ROOT_LOGIN = ROOT_URL+"loginUser.php";
 }

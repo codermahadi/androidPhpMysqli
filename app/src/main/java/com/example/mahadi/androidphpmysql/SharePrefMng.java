@@ -9,6 +9,8 @@ import android.content.SharedPreferences;
 
 public class SharePrefMng {
 
+
+
     private static SharePrefMng prefMng;
     private static Context mCntx;
 
