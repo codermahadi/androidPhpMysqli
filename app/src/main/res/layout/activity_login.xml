@@ -5,9 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.mahadi.androidphpmysql.MainActivity">
+    tools:context="com.example.mahadi.androidphpmysql.LoginActivity">
 
-     <LinearLayout
+
+         <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
          android:background="#dddddd"
@@ -20,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="@string/already_registered_click_here_to_login" />
+            android:text="@string/if_you_not_registered_n_click_here_to_register" />
     </LinearLayout>
 
     <LinearLayout
@@ -61,29 +62,18 @@
             android:hint="@string/enter_password" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/email" />
-
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/enter_email_address" />
-    </LinearLayout>
 
     <Button
-        android:id="@+id/btn_rg"
+        android:id="@+id/btn_login"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/register"/>
+        android:text="@string/login"/>
 
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="30sp"
+        android:id="@+id/result"/>
 </LinearLayout>

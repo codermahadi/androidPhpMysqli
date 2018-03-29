@@ -7,5 +7,7 @@
     <string name="enter_password">Enter password</string>
     <string name="pass">Password</string>
     <string name="register">Register</string>
+    <string name="login">Login</string>
     <string name="already_registered_click_here_to_login">Already Registered? \n Click Here to login</string>
+    <string name="if_you_not_registered_n_click_here_to_register">If you not Registered?   Click Here to Register</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.mahadi.androidphpmysql;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private EditText uname, pass, email;
     private Button btn_res;
+    private TextView txt_login;
 
     private ProgressDialog progressDialog;
 
@@ -36,12 +39,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        txt_login =(TextView) findViewById(R.id.res);
+
         uname = (EditText) findViewById(R.id.uname);
         pass = (EditText) findViewById(R.id.pass);
         email = (EditText) findViewById(R.id.email);
 
         btn_res = (Button) findViewById(R.id.btn_rg);
         btn_res.setOnClickListener(this);
+        txt_login.setOnClickListener(this);
 
         progressDialog = new ProgressDialog(this);
 
@@ -54,6 +60,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view.getId() == R.id.btn_rg) {
 
             registerUser();
+
+        }else if(view.getId() == R.id.res){
+
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
         }
     }
 
