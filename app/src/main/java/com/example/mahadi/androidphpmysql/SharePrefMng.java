@@ -68,5 +68,18 @@ public class SharePrefMng {
         return true;
     }
 
+//    get username
+    public String getUsername(){
+
+        SharedPreferences sharedPreferences = mCntx.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_USERNAME, null);
+    }
+
+    public String getUserEmail(){
+
+        SharedPreferences sharedPreferences = mCntx.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_EMAIL,null);
+    }
+
 
 }

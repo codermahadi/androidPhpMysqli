@@ -48,23 +48,9 @@
             android:textSize="18sp" />
     </LinearLayout>
 
-    <LinearLayout
+    <Button
+        android:id="@+id/logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="User ID : "
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/uid"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
-    </LinearLayout>
+        android:text="Logout"/>
 </LinearLayout>
