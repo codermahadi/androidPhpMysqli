@@ -35,6 +35,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        if (SharePrefMng.getInstance(this).isLoggedIn()){
+            finish();
+            startActivity(new Intent(LoginActivity.this, ProfileActivity.class));
+        }
+
         result = (TextView) findViewById(R.id.result);
         text_reister = (TextView) findViewById(R.id.res);
 
@@ -85,7 +90,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                         try {
                             JSONObject object = new JSONObject(response);
-
                             if (!object.getBoolean("error")) {
 
                                 SharePrefMng.getInstance(getApplicationContext()).userLogin(
@@ -95,6 +99,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                                 );
                                 Toast.makeText(getApplicationContext(), "User Login Successfully", Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(LoginActivity.this, ProfileActivity.class));
+                                finish();
 
                             } else {
 

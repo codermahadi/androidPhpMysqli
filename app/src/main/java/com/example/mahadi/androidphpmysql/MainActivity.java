@@ -39,6 +39,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if (SharePrefMng.getInstance(this).isLoggedIn()){
+            finish();
+            startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+        }
+
         txt_login =(TextView) findViewById(R.id.res);
 
         uname = (EditText) findViewById(R.id.uname);
